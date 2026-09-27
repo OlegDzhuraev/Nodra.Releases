@@ -1,4 +1,4 @@
-# Nodra.Standalone
+# Nodra.Releases
 
 This repo only for Nodra releases publishing.
 
