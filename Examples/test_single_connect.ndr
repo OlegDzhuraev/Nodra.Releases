@@ -1,0 +1,225 @@
+{
+  "Nodes": [
+    {
+      "type": "GeometryOutput",
+      "HasOutput": false,
+      "Id": "2ac36928f6f5457697b642abeb57a3ef",
+      "InputCount": 1,
+      "InputTypes": [
+        "Geometry"
+      ],
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In"
+      ],
+      "Position": {
+        "X": 600,
+        "Y": 300
+      },
+      "Enabled": true
+    },
+    {
+      "type": "BoolMath",
+      "InputCount": 2,
+      "InputTypes": [
+        "Bool",
+        "Bool"
+      ],
+      "OutputType": "Bool",
+      "Subtitle": "And",
+      "Operation": "And",
+      "A": false,
+      "B": false,
+      "Id": "9c12e36c019f417eb167fc414eb307a7",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Bool"
+      ],
+      "OutputLabels": [
+        "Bool"
+      ],
+      "InputLabels": [
+        "A",
+        "B"
+      ],
+      "Position": {
+        "X": 507.40005,
+        "Y": 704.99994
+      },
+      "Enabled": true
+    },
+    {
+      "type": "CombineXYZ",
+      "InputCount": 3,
+      "InputTypes": [
+        "Float",
+        "Float",
+        "Float"
+      ],
+      "OutputType": "Vector3",
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "Id": "99d3b8ceec824e708f67bc4ebd99c66b",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Vector3"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Vector3"
+      ],
+      "InputLabels": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "Position": {
+        "X": 74.50005,
+        "Y": 1345.8999
+      },
+      "Enabled": true
+    },
+    {
+      "type": "SeparateXYZ",
+      "InputCount": 1,
+      "InputTypes": [
+        "Vector3"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Float",
+        "Float"
+      ],
+      "OutputLabels": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "Value": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "Id": "a97e359e2ff44f9d880b1725b6ec694a",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "InputLabels": [
+        "Value"
+      ],
+      "Position": {
+        "X": -568.59515,
+        "Y": 722.5158
+      },
+      "Enabled": true
+    },
+    {
+      "type": "Position",
+      "InputCount": 1,
+      "InputTypes": [
+        "Geometry"
+      ],
+      "OutputType": "Vector3",
+      "Id": "3e69c09f20634a7980ff57623e7698a0",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Vector3"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Vector3"
+      ],
+      "InputLabels": [
+        "In"
+      ],
+      "Position": {
+        "X": -1123.311,
+        "Y": 794.0367
+      },
+      "Enabled": true
+    },
+    {
+      "type": "BoxGenerator",
+      "InputCount": 0,
+      "Size": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1
+      },
+      "Id": "663ea1dd1ef44ef69ca9cba67ad00529",
+      "HasOutput": true,
+      "InputTypes": [],
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [],
+      "Position": {
+        "X": -1179.5703,
+        "Y": 210.24532
+      },
+      "Enabled": true
+    },
+    {
+      "type": "Twist",
+      "InputCount": 3,
+      "InputTypes": [
+        "Geometry",
+        "Vector3",
+        "Float"
+      ],
+      "Axis": "Y",
+      "Center": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "AngleDegrees": 180,
+      "Id": "e8b9781e081640039e1774ef4a2208bf",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In",
+        "Center",
+        "AngleDegrees"
+      ],
+      "Position": {
+        "X": 150.26724,
+        "Y": 338.25543
+      },
+      "Enabled": true
+    }
+  ],
+  "Edges": [
+    {
+      "FromNodeId": "3e69c09f20634a7980ff57623e7698a0",
+      "ToNodeId": "a97e359e2ff44f9d880b1725b6ec694a",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    }
+  ],
+  "EditorView": {
+    "CenterX": -1.3880476,
+    "CenterY": 538.8318,
+    "Zoom": 1.2264656
+  }
+}

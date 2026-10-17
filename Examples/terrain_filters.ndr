@@ -1,0 +1,236 @@
+{
+  "Nodes": [
+    {
+      "type": "NoiseTexture",
+      "Id": "basenoise",
+      "Type": "RidgedMultifractal",
+      "Scale": 0.12,
+      "Detail": 7,
+      "Offset": 1,
+      "Gain": 2,
+      "Position": {
+        "X": 0,
+        "Y": 100
+      }
+    },
+    {
+      "type": "Math",
+      "Id": "basescale",
+      "Operation": "Multiply",
+      "B": 1.5,
+      "Position": {
+        "X": 240,
+        "Y": 100
+      }
+    },
+    {
+      "type": "HeightfieldFromField",
+      "Id": "base",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 257,
+      "Position": {
+        "X": 460,
+        "Y": 100
+      }
+    },
+    {
+      "type": "NoiseTexture",
+      "Id": "warpnoisex",
+      "Dimensions": "D4",
+      "W": 0,
+      "Scale": 0.15,
+      "Detail": 2,
+      "Position": {
+        "X": 0,
+        "Y": 400
+      }
+    },
+    {
+      "type": "HeightfieldFromField",
+      "Id": "warpx",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 65,
+      "Position": {
+        "X": 460,
+        "Y": 400
+      }
+    },
+    {
+      "type": "NoiseTexture",
+      "Id": "warpnoisez",
+      "Dimensions": "D4",
+      "W": 7,
+      "Scale": 0.15,
+      "Detail": 2,
+      "Position": {
+        "X": 0,
+        "Y": 650
+      }
+    },
+    {
+      "type": "HeightfieldFromField",
+      "Id": "warpz",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 65,
+      "Position": {
+        "X": 460,
+        "Y": 650
+      }
+    },
+    {
+      "type": "HeightfieldRemap",
+      "Id": "centerx",
+      "Mode": "Normalize",
+      "Min": -1,
+      "Max": 1,
+      "Position": {
+        "X": 580,
+        "Y": 400
+      }
+    },
+    {
+      "type": "HeightfieldRemap",
+      "Id": "centerz",
+      "Mode": "Normalize",
+      "Min": -1,
+      "Max": 1,
+      "Position": {
+        "X": 580,
+        "Y": 650
+      }
+    },
+    {
+      "type": "HeightfieldWarp",
+      "Id": "warp",
+      "Strength": 2,
+      "Position": {
+        "X": 820,
+        "Y": 250
+      }
+    },
+    {
+      "type": "HeightfieldTerrace",
+      "Id": "terrace",
+      "Steps": 7,
+      "Sharpness": 0.6,
+      "Position": {
+        "X": 920,
+        "Y": 250
+      }
+    },
+    {
+      "type": "HeightfieldBlur",
+      "Id": "blur",
+      "Radius": 0.06,
+      "Position": {
+        "X": 1140,
+        "Y": 250
+      }
+    },
+    {
+      "type": "HeightfieldToMesh",
+      "Id": "mesh",
+      "Position": {
+        "X": 1360,
+        "Y": 250
+      }
+    },
+    {
+      "type": "GeometryOutput",
+      "Id": "output",
+      "Position": {
+        "X": 1580,
+        "Y": 250
+      }
+    }
+  ],
+  "Edges": [
+    {
+      "FromNodeId": "basenoise",
+      "ToNodeId": "basescale",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "basescale",
+      "ToNodeId": "base",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "warpnoisex",
+      "ToNodeId": "warpx",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "warpnoisez",
+      "ToNodeId": "warpz",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "base",
+      "ToNodeId": "warp",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "centerx",
+      "ToNodeId": "warp",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "centerz",
+      "ToNodeId": "warp",
+      "ToPortIndex": 2,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "warp",
+      "ToNodeId": "terrace",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "terrace",
+      "ToNodeId": "blur",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "blur",
+      "ToNodeId": "mesh",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "mesh",
+      "ToNodeId": "output",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "warpx",
+      "ToNodeId": "centerx",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "warpz",
+      "ToNodeId": "centerz",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    }
+  ]
+}

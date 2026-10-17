@@ -1,0 +1,722 @@
+{
+  "Nodes": [
+    {
+      "type": "NoiseTexture",
+      "MutatesGeometryInput": false,
+      "InputCount": 10,
+      "InputTypes": [
+        "Geometry",
+        "Vector3",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Vector",
+        "W",
+        "Scale",
+        "Detail",
+        "Roughness",
+        "Lacunarity",
+        "Offset",
+        "Gain",
+        "Distortion"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Color"
+      ],
+      "OutputLabels": [
+        "Fac",
+        "Color"
+      ],
+      "Dimensions": "D3",
+      "Type": "RidgedMultifractal",
+      "Normalize": true,
+      "W": 0,
+      "Scale": 0.15,
+      "Detail": 6,
+      "Roughness": 0.5,
+      "Lacunarity": 2,
+      "Offset": 1,
+      "Gain": 2,
+      "Distortion": 0,
+      "Id": "ab0219be38714a589ba4906fc0fd0537",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 0,
+        "Y": 0
+      },
+      "Enabled": true
+    },
+    {
+      "type": "Math",
+      "InputCount": 2,
+      "InputTypes": [
+        "Float",
+        "Float"
+      ],
+      "OutputType": "Float",
+      "Subtitle": "Multiply",
+      "Operation": "Multiply",
+      "A": 0,
+      "B": 2.2,
+      "Id": "493901bd97e745518370f517a3bcde45",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "OutputTypes": [
+        "Float"
+      ],
+      "OutputLabels": [
+        "Float"
+      ],
+      "InputLabels": [
+        "A",
+        "B"
+      ],
+      "Position": {
+        "X": 120,
+        "Y": 0
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldFromField",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputType": "Heightfield",
+      "Subtitle": "257 x 257",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 257,
+      "Height": 0,
+      "Id": "95a4873ff3b840fa92326abfaefbf8e4",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Height"
+      ],
+      "Position": {
+        "X": 240,
+        "Y": 0
+      },
+      "Enabled": true
+    },
+    {
+      "type": "TerrainShape",
+      "MutatesGeometryInput": false,
+      "InputCount": 2,
+      "InputTypes": [
+        "Geometry",
+        "Vector3"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Vector"
+      ],
+      "OutputType": "Float",
+      "OutputLabels": [
+        "Height"
+      ],
+      "Subtitle": "Plateau",
+      "Shape": "Plateau",
+      "Center": {
+        "X": 0,
+        "Y": 0
+      },
+      "Radius": 8.5,
+      "Height": 1,
+      "Falloff": 0.7,
+      "Id": "31f3d8a7edeb4b69beaa287c6c5b2f56",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Float"
+      ],
+      "Position": {
+        "X": 0,
+        "Y": 250
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldFromField",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputType": "Heightfield",
+      "Subtitle": "257 x 257",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 257,
+      "Height": 0,
+      "Id": "0e274ba6097340a7a9fe9cc56e59fa97",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Height"
+      ],
+      "Position": {
+        "X": 240,
+        "Y": 250
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldCombine",
+      "InputCount": 3,
+      "InputTypes": [
+        "Heightfield",
+        "Heightfield",
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "A",
+        "B",
+        "Mask"
+      ],
+      "Subtitle": "Multiply",
+      "Mode": "Multiply",
+      "Factor": 1,
+      "MutatesGeometryInput": false,
+      "OutputType": "Heightfield",
+      "Id": "958a1728917e4111bc13481c54e1ef0b",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 480,
+        "Y": 100
+      },
+      "Enabled": true
+    },
+    {
+      "type": "TerrainShape",
+      "MutatesGeometryInput": false,
+      "InputCount": 2,
+      "InputTypes": [
+        "Geometry",
+        "Vector3"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Vector"
+      ],
+      "OutputType": "Float",
+      "OutputLabels": [
+        "Height"
+      ],
+      "Subtitle": "Crater",
+      "Shape": "Crater",
+      "Center": {
+        "X": 3.5,
+        "Y": -3
+      },
+      "Radius": 2.2,
+      "Height": 1.4,
+      "Falloff": 0.35,
+      "Id": "e1517203466c4b318d4624472793cf9c",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Float"
+      ],
+      "Position": {
+        "X": 0,
+        "Y": 500
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldFromField",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputType": "Heightfield",
+      "Subtitle": "257 x 257",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 257,
+      "Height": 0,
+      "Id": "149b76c638734caaa9c27ffe68137b06",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Height"
+      ],
+      "Position": {
+        "X": 240,
+        "Y": 500
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldCombine",
+      "InputCount": 3,
+      "InputTypes": [
+        "Heightfield",
+        "Heightfield",
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "A",
+        "B",
+        "Mask"
+      ],
+      "Subtitle": "Add",
+      "Mode": "Add",
+      "Factor": 1,
+      "MutatesGeometryInput": false,
+      "OutputType": "Heightfield",
+      "Id": "d4de7dd1a8f94a739a08542b44bad4a2",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 720,
+        "Y": 100
+      },
+      "Enabled": true
+    },
+    {
+      "type": "SplineGenerator",
+      "InputCount": 0,
+      "ControlPoints": [
+        {
+          "X": -7,
+          "Y": 0,
+          "Z": 5
+        },
+        {
+          "X": -3,
+          "Y": 0,
+          "Z": 1
+        },
+        {
+          "X": 0,
+          "Y": 0,
+          "Z": 3
+        },
+        {
+          "X": 3,
+          "Y": 0,
+          "Z": 6
+        }
+      ],
+      "PointCount": 40,
+      "Closed": false,
+      "Id": "a1719dc914a8402f83a3e44e380cda23",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "InputTypes": [],
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [],
+      "Position": {
+        "X": 0,
+        "Y": 750
+      },
+      "Enabled": true
+    },
+    {
+      "type": "CurveDistance",
+      "MutatesGeometryInput": false,
+      "InputCount": 2,
+      "InputTypes": [
+        "Geometry",
+        "Geometry"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Curve"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Float",
+        "Float"
+      ],
+      "OutputLabels": [
+        "Distance",
+        "Height",
+        "Mask"
+      ],
+      "Width": 1.6,
+      "Closed": false,
+      "Id": "b7f539dcc816498ba4a55ab3fdfe49f1",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 240,
+        "Y": 750
+      },
+      "Enabled": true
+    },
+    {
+      "type": "Math",
+      "InputCount": 2,
+      "InputTypes": [
+        "Float",
+        "Float"
+      ],
+      "OutputType": "Float",
+      "Subtitle": "Multiply",
+      "Operation": "Multiply",
+      "A": 0,
+      "B": 2.2,
+      "Id": "b6a01d6195344165a96caf94de935b28",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "OutputTypes": [
+        "Float"
+      ],
+      "OutputLabels": [
+        "Float"
+      ],
+      "InputLabels": [
+        "A",
+        "B"
+      ],
+      "Position": {
+        "X": 480,
+        "Y": 750
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldFromField",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputType": "Heightfield",
+      "Subtitle": "257 x 257",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 257,
+      "Height": 0,
+      "Id": "fc17f172080540baa4d5cc37647e09ea",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Height"
+      ],
+      "Position": {
+        "X": 720,
+        "Y": 750
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldCombine",
+      "InputCount": 3,
+      "InputTypes": [
+        "Heightfield",
+        "Heightfield",
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "A",
+        "B",
+        "Mask"
+      ],
+      "Subtitle": "Add",
+      "Mode": "Add",
+      "Factor": 1,
+      "MutatesGeometryInput": false,
+      "OutputType": "Heightfield",
+      "Id": "be1fc94a83324b7a992cb03c5285a1c9",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 960,
+        "Y": 100
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldThermalErosion",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputTypes": [
+        "Heightfield",
+        "Heightfield",
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield",
+        "Wear",
+        "Deposition"
+      ],
+      "Angle": 38,
+      "Iterations": 20,
+      "Strength": 0.5,
+      "Id": "feabefa6ff8e4f1398f484fa6622a8a2",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 1200,
+        "Y": 100
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldToMesh",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "Id": "133dcbcf14124552b720b422269a99f4",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "Position": {
+        "X": 1440,
+        "Y": 100
+      },
+      "Enabled": true
+    },
+    {
+      "type": "GeometryOutput",
+      "MutatesGeometryInput": false,
+      "HasOutput": false,
+      "Id": "0baed5ff5a604062949bfcc831359b5d",
+      "InputCount": 1,
+      "InputTypes": [
+        "Geometry"
+      ],
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In"
+      ],
+      "Position": {
+        "X": 1680,
+        "Y": 100
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldOutput",
+      "MutatesGeometryInput": false,
+      "HasOutput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputType": "Heightfield",
+      "Subtitle": "height.png",
+      "Extension": "png",
+      "Name": "height",
+      "Format": "HeightPng16",
+      "Range": "Fixed",
+      "Min": 0,
+      "Max": 8,
+      "Id": "cdaa0da9a19a4cafa69aa06375fe5195",
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 1440,
+        "Y": 300
+      },
+      "Enabled": true
+    }
+  ],
+  "Edges": [
+    {
+      "FromNodeId": "ab0219be38714a589ba4906fc0fd0537",
+      "ToNodeId": "493901bd97e745518370f517a3bcde45",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "493901bd97e745518370f517a3bcde45",
+      "ToNodeId": "95a4873ff3b840fa92326abfaefbf8e4",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "31f3d8a7edeb4b69beaa287c6c5b2f56",
+      "ToNodeId": "0e274ba6097340a7a9fe9cc56e59fa97",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "95a4873ff3b840fa92326abfaefbf8e4",
+      "ToNodeId": "958a1728917e4111bc13481c54e1ef0b",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "0e274ba6097340a7a9fe9cc56e59fa97",
+      "ToNodeId": "958a1728917e4111bc13481c54e1ef0b",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "e1517203466c4b318d4624472793cf9c",
+      "ToNodeId": "149b76c638734caaa9c27ffe68137b06",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "958a1728917e4111bc13481c54e1ef0b",
+      "ToNodeId": "d4de7dd1a8f94a739a08542b44bad4a2",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "149b76c638734caaa9c27ffe68137b06",
+      "ToNodeId": "d4de7dd1a8f94a739a08542b44bad4a2",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "a1719dc914a8402f83a3e44e380cda23",
+      "ToNodeId": "b7f539dcc816498ba4a55ab3fdfe49f1",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "b7f539dcc816498ba4a55ab3fdfe49f1",
+      "ToNodeId": "b6a01d6195344165a96caf94de935b28",
+      "ToPortIndex": 0,
+      "FromPortIndex": 2
+    },
+    {
+      "FromNodeId": "b6a01d6195344165a96caf94de935b28",
+      "ToNodeId": "fc17f172080540baa4d5cc37647e09ea",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "d4de7dd1a8f94a739a08542b44bad4a2",
+      "ToNodeId": "be1fc94a83324b7a992cb03c5285a1c9",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "fc17f172080540baa4d5cc37647e09ea",
+      "ToNodeId": "be1fc94a83324b7a992cb03c5285a1c9",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "be1fc94a83324b7a992cb03c5285a1c9",
+      "ToNodeId": "feabefa6ff8e4f1398f484fa6622a8a2",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "feabefa6ff8e4f1398f484fa6622a8a2",
+      "ToNodeId": "133dcbcf14124552b720b422269a99f4",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "133dcbcf14124552b720b422269a99f4",
+      "ToNodeId": "0baed5ff5a604062949bfcc831359b5d",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "feabefa6ff8e4f1398f484fa6622a8a2",
+      "ToNodeId": "cdaa0da9a19a4cafa69aa06375fe5195",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    }
+  ],
+  "EditorView": null,
+  "EmbeddedFiles": null
+}

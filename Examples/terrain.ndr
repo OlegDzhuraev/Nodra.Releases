@@ -1,0 +1,15 @@
+{
+  "Nodes": [
+    { "type": "NoiseTexture", "Id": "terrainnoise", "Type": "RidgedMultifractal", "Scale": 0.12, "Detail": 7, "Roughness": 0.5, "Lacunarity": 2, "Offset": 1, "Gain": 2, "Position": { "X": 0, "Y": 200 } },
+    { "type": "Math", "Id": "terrainscale", "Operation": "Multiply", "B": 1.5, "Position": { "X": 260, "Y": 200 } },
+    { "type": "HeightfieldFromField", "Id": "terrainfield", "Size": { "X": 20, "Y": 20 }, "Resolution": 257, "Position": { "X": 480, "Y": 200 } },
+    { "type": "HeightfieldToMesh", "Id": "terrainmesh", "Position": { "X": 720, "Y": 200 } },
+    { "type": "GeometryOutput", "Id": "terrainoutput", "Position": { "X": 940, "Y": 200 } }
+  ],
+  "Edges": [
+    { "FromNodeId": "terrainnoise", "ToNodeId": "terrainscale", "ToPortIndex": 0, "FromPortIndex": 0 },
+    { "FromNodeId": "terrainscale", "ToNodeId": "terrainfield", "ToPortIndex": 0, "FromPortIndex": 0 },
+    { "FromNodeId": "terrainfield", "ToNodeId": "terrainmesh", "ToPortIndex": 0, "FromPortIndex": 0 },
+    { "FromNodeId": "terrainmesh", "ToNodeId": "terrainoutput", "ToPortIndex": 0, "FromPortIndex": 0 }
+  ]
+}

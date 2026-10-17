@@ -1,0 +1,877 @@
+{
+  "Nodes": [
+    {
+      "type": "NoiseTexture",
+      "MutatesGeometryInput": false,
+      "InputCount": 10,
+      "InputTypes": [
+        "Geometry",
+        "Vector3",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float",
+        "Float"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Vector",
+        "W",
+        "Scale",
+        "Detail",
+        "Roughness",
+        "Lacunarity",
+        "Offset",
+        "Gain",
+        "Distortion"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Color"
+      ],
+      "OutputLabels": [
+        "Fac",
+        "Color"
+      ],
+      "Dimensions": "D3",
+      "Type": "HeteroTerrain",
+      "Normalize": true,
+      "W": 0,
+      "Scale": 0.1,
+      "Detail": 8,
+      "Roughness": 0.55,
+      "Lacunarity": 2,
+      "Offset": 0.3,
+      "Gain": 1,
+      "Distortion": 0,
+      "Id": "noise",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 0,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldFromField",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputType": "Heightfield",
+      "Subtitle": "257 x 257",
+      "Size": {
+        "X": 20,
+        "Y": 20
+      },
+      "Resolution": 257,
+      "Height": 0,
+      "Id": "base",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Height"
+      ],
+      "Position": {
+        "X": 240,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldRemap",
+      "Subtitle": "Normalize",
+      "Mode": "Normalize",
+      "FromMin": 0,
+      "FromMax": 1,
+      "Min": 0,
+      "Max": 5,
+      "ClampResult": true,
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputType": "Heightfield",
+      "Id": "scale",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 460,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldThermalErosion",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputTypes": [
+        "Heightfield",
+        "Heightfield",
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield",
+        "Wear",
+        "Deposition"
+      ],
+      "Angle": 40,
+      "Iterations": 30,
+      "Strength": 0.5,
+      "Id": "thermal",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 680,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldHydraulicErosion",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputTypes": [
+        "Heightfield",
+        "Heightfield",
+        "Heightfield",
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield",
+        "Flow",
+        "Wear",
+        "Deposition"
+      ],
+      "Droplets": 3,
+      "Seed": 1,
+      "Lifetime": 40,
+      "Inertia": 0.05,
+      "Capacity": 4,
+      "Erosion": 0.3,
+      "Deposition": 0.3,
+      "Evaporation": 0.01,
+      "Radius": 0.25,
+      "Id": "hydraulic",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 920,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldToMesh",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "Id": "mesh",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "Position": {
+        "X": 1160,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "GeometryOutput",
+      "MutatesGeometryInput": false,
+      "HasOutput": false,
+      "Id": "output",
+      "InputCount": 1,
+      "InputTypes": [
+        "Geometry"
+      ],
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In"
+      ],
+      "Position": {
+        "X": 2520,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldRemap",
+      "Subtitle": "Normalize",
+      "Mode": "Normalize",
+      "FromMin": 0,
+      "FromMax": 1,
+      "Min": 0,
+      "Max": 1,
+      "ClampResult": true,
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputType": "Heightfield",
+      "Id": "0c249bb8b5754aa5a8ac4e596c4e419c",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 1160,
+        "Y": 420
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldSlopeMask",
+      "Min": 38,
+      "Max": 90,
+      "Falloff": 8,
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputType": "Heightfield",
+      "Id": "415aa92a3e8041638eb4df0750914aaf",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 1160,
+        "Y": 620
+      },
+      "Enabled": true
+    },
+    {
+      "type": "HeightfieldOcclusion",
+      "Radius": 1.5,
+      "Directions": 12,
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Heightfield"
+      ],
+      "OutputType": "Heightfield",
+      "Id": "c39db81e68c9497ba2f10a9996feb066",
+      "HasOutput": true,
+      "OutputTypes": [
+        "Heightfield"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Heightfield"
+      ],
+      "Position": {
+        "X": 1160,
+        "Y": 820
+      },
+      "Enabled": true
+    },
+    {
+      "type": "SampleHeightfield",
+      "MutatesGeometryInput": false,
+      "InputCount": 2,
+      "InputTypes": [
+        "Geometry",
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Heightfield"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Vector3"
+      ],
+      "OutputLabels": [
+        "Height",
+        "Normal"
+      ],
+      "Id": "dda0ac7be62f41b1bf6bf4b85d552735",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 1400,
+        "Y": 420
+      },
+      "Enabled": true
+    },
+    {
+      "type": "ColorRamp",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputTypes": [
+        "Color",
+        "Float"
+      ],
+      "OutputLabels": [
+        "Color",
+        "Alpha"
+      ],
+      "Interpolation": "Linear",
+      "Stops": [
+        {
+          "Position": 0,
+          "Color": {
+            "X": 0.72,
+            "Y": 0.66,
+            "Z": 0.48,
+            "W": 1
+          }
+        },
+        {
+          "Position": 0.08,
+          "Color": {
+            "X": 0.33,
+            "Y": 0.47,
+            "Z": 0.2,
+            "W": 1
+          }
+        },
+        {
+          "Position": 0.45,
+          "Color": {
+            "X": 0.2,
+            "Y": 0.33,
+            "Z": 0.15,
+            "W": 1
+          }
+        },
+        {
+          "Position": 0.7,
+          "Color": {
+            "X": 0.45,
+            "Y": 0.42,
+            "Z": 0.38,
+            "W": 1
+          }
+        },
+        {
+          "Position": 0.86,
+          "Color": {
+            "X": 0.95,
+            "Y": 0.95,
+            "Z": 0.97,
+            "W": 1
+          }
+        }
+      ],
+      "Fac": 0.5,
+      "Id": "8e6ab67d131c4fdabf5d67984fae5d22",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "InputLabels": [
+        "Fac"
+      ],
+      "Position": {
+        "X": 1620,
+        "Y": 420
+      },
+      "Enabled": true
+    },
+    {
+      "type": "SampleHeightfield",
+      "MutatesGeometryInput": false,
+      "InputCount": 2,
+      "InputTypes": [
+        "Geometry",
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Heightfield"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Vector3"
+      ],
+      "OutputLabels": [
+        "Height",
+        "Normal"
+      ],
+      "Id": "3f6595af86aa4ac49ca2533cbc76b8c9",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 1400,
+        "Y": 620
+      },
+      "Enabled": true
+    },
+    {
+      "type": "Compare",
+      "InputCount": 2,
+      "InputTypes": [
+        "Float",
+        "Float"
+      ],
+      "OutputType": "Bool",
+      "Operation": "GreaterThan",
+      "A": 0,
+      "B": 0.5,
+      "Id": "1d41706244044b38b598b73db7c1c0ce",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "OutputTypes": [
+        "Bool"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Bool"
+      ],
+      "InputLabels": [
+        "A",
+        "B"
+      ],
+      "Position": {
+        "X": 1620,
+        "Y": 620
+      },
+      "Enabled": true
+    },
+    {
+      "type": "SampleHeightfield",
+      "MutatesGeometryInput": false,
+      "InputCount": 2,
+      "InputTypes": [
+        "Geometry",
+        "Heightfield"
+      ],
+      "InputLabels": [
+        "Geometry",
+        "Heightfield"
+      ],
+      "OutputTypes": [
+        "Float",
+        "Vector3"
+      ],
+      "OutputLabels": [
+        "Height",
+        "Normal"
+      ],
+      "Id": "07d1e7be46db47db80ff9eee23a6991e",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "Position": {
+        "X": 1400,
+        "Y": 820
+      },
+      "Enabled": true
+    },
+    {
+      "type": "ColorRamp",
+      "MutatesGeometryInput": false,
+      "InputCount": 1,
+      "InputTypes": [
+        "Float"
+      ],
+      "OutputTypes": [
+        "Color",
+        "Float"
+      ],
+      "OutputLabels": [
+        "Color",
+        "Alpha"
+      ],
+      "Interpolation": "Linear",
+      "Stops": [
+        {
+          "Position": 0.4,
+          "Color": {
+            "X": 0.3,
+            "Y": 0.3,
+            "Z": 0.3,
+            "W": 1
+          }
+        },
+        {
+          "Position": 1,
+          "Color": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1,
+            "W": 1
+          }
+        }
+      ],
+      "Fac": 0.5,
+      "Id": "b1bcd6a3f2d7450ba3e05601180f6b5a",
+      "HasOutput": true,
+      "OutputType": "Geometry",
+      "Subtitle": null,
+      "InputLabels": [
+        "Fac"
+      ],
+      "Position": {
+        "X": 1620,
+        "Y": 820
+      },
+      "Enabled": true
+    },
+    {
+      "type": "VertexColor",
+      "InputCount": 3,
+      "InputTypes": [
+        "Geometry",
+        "Bool",
+        "Color"
+      ],
+      "Mode": "Flat",
+      "Blend": "Replace",
+      "Color": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1,
+        "W": 1
+      },
+      "Source": "Height",
+      "Axis": "Y",
+      "StartColor": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "W": 1
+      },
+      "EndColor": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1,
+        "W": 1
+      },
+      "Selection": true,
+      "Id": "b0d5c64268b34206b988aef39030b0eb",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In",
+        "Selection",
+        "Color"
+      ],
+      "Position": {
+        "X": 1860,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "VertexColor",
+      "InputCount": 3,
+      "InputTypes": [
+        "Geometry",
+        "Bool",
+        "Color"
+      ],
+      "Mode": "Flat",
+      "Blend": "Replace",
+      "Color": {
+        "X": 0.4,
+        "Y": 0.37,
+        "Z": 0.34,
+        "W": 1
+      },
+      "Source": "Height",
+      "Axis": "Y",
+      "StartColor": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "W": 1
+      },
+      "EndColor": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1,
+        "W": 1
+      },
+      "Selection": true,
+      "Id": "16b0fa5667824a7d9af45af96bda1efd",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In",
+        "Selection",
+        "Color"
+      ],
+      "Position": {
+        "X": 2080,
+        "Y": 200
+      },
+      "Enabled": true
+    },
+    {
+      "type": "VertexColor",
+      "InputCount": 3,
+      "InputTypes": [
+        "Geometry",
+        "Bool",
+        "Color"
+      ],
+      "Mode": "Flat",
+      "Blend": "Multiply",
+      "Color": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1,
+        "W": 1
+      },
+      "Source": "Height",
+      "Axis": "Y",
+      "StartColor": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "W": 1
+      },
+      "EndColor": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1,
+        "W": 1
+      },
+      "Selection": true,
+      "Id": "98b40d4c3c264cb8b3cead1e43dedcaf",
+      "HasOutput": true,
+      "MutatesGeometryInput": true,
+      "OutputType": "Geometry",
+      "OutputTypes": [
+        "Geometry"
+      ],
+      "Subtitle": null,
+      "OutputLabels": [
+        "Geometry"
+      ],
+      "InputLabels": [
+        "In",
+        "Selection",
+        "Color"
+      ],
+      "Position": {
+        "X": 2300,
+        "Y": 200
+      },
+      "Enabled": true
+    }
+  ],
+  "Edges": [
+    {
+      "FromNodeId": "noise",
+      "ToNodeId": "base",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "base",
+      "ToNodeId": "scale",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "scale",
+      "ToNodeId": "thermal",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "thermal",
+      "ToNodeId": "hydraulic",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "hydraulic",
+      "ToNodeId": "mesh",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "hydraulic",
+      "ToNodeId": "0c249bb8b5754aa5a8ac4e596c4e419c",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "hydraulic",
+      "ToNodeId": "415aa92a3e8041638eb4df0750914aaf",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "hydraulic",
+      "ToNodeId": "c39db81e68c9497ba2f10a9996feb066",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "0c249bb8b5754aa5a8ac4e596c4e419c",
+      "ToNodeId": "dda0ac7be62f41b1bf6bf4b85d552735",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "dda0ac7be62f41b1bf6bf4b85d552735",
+      "ToNodeId": "8e6ab67d131c4fdabf5d67984fae5d22",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "415aa92a3e8041638eb4df0750914aaf",
+      "ToNodeId": "3f6595af86aa4ac49ca2533cbc76b8c9",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "3f6595af86aa4ac49ca2533cbc76b8c9",
+      "ToNodeId": "1d41706244044b38b598b73db7c1c0ce",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "c39db81e68c9497ba2f10a9996feb066",
+      "ToNodeId": "07d1e7be46db47db80ff9eee23a6991e",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "07d1e7be46db47db80ff9eee23a6991e",
+      "ToNodeId": "b1bcd6a3f2d7450ba3e05601180f6b5a",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "mesh",
+      "ToNodeId": "b0d5c64268b34206b988aef39030b0eb",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "8e6ab67d131c4fdabf5d67984fae5d22",
+      "ToNodeId": "b0d5c64268b34206b988aef39030b0eb",
+      "ToPortIndex": 2,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "b0d5c64268b34206b988aef39030b0eb",
+      "ToNodeId": "16b0fa5667824a7d9af45af96bda1efd",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "1d41706244044b38b598b73db7c1c0ce",
+      "ToNodeId": "16b0fa5667824a7d9af45af96bda1efd",
+      "ToPortIndex": 1,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "16b0fa5667824a7d9af45af96bda1efd",
+      "ToNodeId": "98b40d4c3c264cb8b3cead1e43dedcaf",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "b1bcd6a3f2d7450ba3e05601180f6b5a",
+      "ToNodeId": "98b40d4c3c264cb8b3cead1e43dedcaf",
+      "ToPortIndex": 2,
+      "FromPortIndex": 0
+    },
+    {
+      "FromNodeId": "98b40d4c3c264cb8b3cead1e43dedcaf",
+      "ToNodeId": "output",
+      "ToPortIndex": 0,
+      "FromPortIndex": 0
+    }
+  ],
+  "EditorView": null,
+  "EmbeddedFiles": null
+}
