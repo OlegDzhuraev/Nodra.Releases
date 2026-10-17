@@ -21,9 +21,9 @@ Nodra is a standalone desktop app for creating procedural meshes, terrains, and 
 
 Screenshots of Nodra's Preview window. Click a preview to view the full-size image.
 
-| Procedural tube (`demo.ndr`) | Tree preview (`tree_branches.ndr`) | Terrain erosion (`terrain_erosion.ndr`) |
+| Procedural geometry (`demo.ndr`) | Tree preview (`tree_branches.ndr`) | Terrain erosion (`terrain_erosion.ndr`) |
 | --- | --- | --- |
-| [<img src="docs/images/demo.png" width="240" alt="Nodra's Preview window showing a smooth tube following a closed triangular curve from demo.ndr">](docs/images/demo.png) | [<img src="docs/images/tree-branches.png" width="240" alt="Nodra's Preview window showing a procedural tree with branches and leaves from tree_branches.ndr">](docs/images/tree-branches.png) | [<img src="docs/images/terrain-erosion.png" width="240" alt="Nodra's Preview window showing eroded mountain terrain with a height-based color gradient from terrain_erosion.ndr">](docs/images/terrain-erosion.png) |
+| [<img src="docs/images/demo.png" width="240" alt="Nodra's Preview window showing a curved tube, distributed instances, and a textured rounded box from demo.ndr">](docs/images/demo.png) | [<img src="docs/images/tree-branches.png" width="240" alt="Nodra's Preview window showing a procedural tree with branches and leaves from tree_branches.ndr">](docs/images/tree-branches.png) | [<img src="docs/images/terrain-erosion.png" width="240" alt="Nodra's Preview window showing eroded mountain terrain with a height-based color gradient from terrain_erosion.ndr">](docs/images/terrain-erosion.png) |
 
 ### Heightfield terrain
 
