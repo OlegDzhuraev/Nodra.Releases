@@ -51,6 +51,17 @@ For a larger view, open the separate Renderer window from **File > Open Renderer
 | Texture export | PNG |
 | Editable graphs | `.ndr` |
 
+## Command-line interface
+
+Nodra CLI runs `.ndr` graphs without opening the editor. Use it to evaluate and validate graphs, export meshes and terrain maps, render PNG previews, or process folders in batches. It also provides node listings and evaluation benchmarks, with JSON output available for automation.
+
+```sh
+nodra eval demo.ndr --out demo.obj
+nodra batch Examples --out-dir output --mesh gltf --render --maps
+```
+
+See the [CLI cheatsheet](https://nodra3d.com/cheatsheet.html) for commands and options, or run `nodra --help`.
+
 ## Download and run
 
 Open the [Releases page](https://github.com/OlegDzhuraev/Nodra.Releases/releases) and choose the standalone app package for your platform:
