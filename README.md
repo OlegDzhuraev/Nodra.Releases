@@ -4,7 +4,7 @@
 
 Nodra is a standalone desktop app for creating procedural meshes, terrains, and vegetation. Connect generators and modifiers, adjust their parameters, and inspect the result in a live 3D preview. Export your geometry for use in a game engine, renderer, or 3D printing workflow.
 
-[Download releases](https://github.com/OlegDzhuraev/Nodra.Releases/releases) · [Unity plugin](https://github.com/OlegDzhuraev/nodra)
+[Official website](https://nodra3d.com) · [Download releases](https://github.com/OlegDzhuraev/Nodra.Releases/releases) · [Unity plugin](https://github.com/OlegDzhuraev/nodra)
 
 ![Nodra's visual graph editor with connected branch and tube generators and a live 3D tree preview](docs/images/graph-editor.png)
 
@@ -24,6 +24,14 @@ Screenshots of Nodra's Preview window with `demo.ndr` and `tree_branches.ndr` op
 | Procedural tube (`demo.ndr`) | Tree preview (`tree_branches.ndr`) |
 | --- | --- |
 | ![Nodra's Preview window showing a smooth tube following a closed triangular curve from demo.ndr](docs/images/demo.png) | ![Nodra's Preview window showing a procedural tree with branches and leaves from tree_branches.ndr](docs/images/tree-branches.png) |
+
+### Heightfield terrain
+
+Generate a heightfield from procedural noise, shape it with thermal and hydraulic erosion, and convert it to a mesh. A height-based vertex color gradient highlights lowlands, slopes, and mountain peaks in the live preview.
+
+![Nodra heightfield workflow connecting noise, thermal and hydraulic erosion, mesh conversion, and vertex coloring, with a live terrain preview](docs/images/heightfield-terrain.png)
+
+*Procedural terrain with thermal and hydraulic erosion and a height-based color gradient.*
 
 ## Work visually
 
