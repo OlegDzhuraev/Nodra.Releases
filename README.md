@@ -35,9 +35,9 @@ Generate a heightfield from procedural noise, shape it with thermal and hydrauli
 
 ## Work visually
 
-Build reusable node graphs, inspect intermediate results with Viewer nodes, and keep the final output separate from the branch you are previewing. The editor includes node search, parameter editing, undo/redo, copy/paste, and light and dark themes.
+Build reusable node graphs to generate procedural geometry, and export mesh results to popular formats (fbx, obj, glb).
 
-Save your work as `.ndr` graphs and reuse saved graphs as subgraphs. Imported meshes and textures are embedded when saving, so those assets travel with the graph.
+Tool using its own `.ndr` format, which is based on json. Saved graphs can be reused as subgraphs. Imported meshes and textures are embedded when saving, so those assets travel with the graph.
 
 For a larger view, open the separate Renderer window from **File > Open Renderer**. It follows changes in the editor and supports shadows, SSAO, bloom, and PNG captures.
 
@@ -72,7 +72,7 @@ Open the [Releases page](https://github.com/OlegDzhuraev/Nodra.Releases/releases
 | macOS Apple Silicon | `Nodra-<version>.dmg` — open the disk image and copy `Nodra.app` to Applications. |
 | Linux x64 | `Nodra-<version>-linux-x64.tar.gz` — extract the archive and run `Nodra.Standalone`. |
 
-Keep the accompanying libraries and resource folders with the executable. The standalone packages use NativeAOT and do not require a separate .NET runtime installation. See each release's notes for the files included in that release.
+Keep the accompanying libraries and resource folders with the executable. See each release's notes for the files included in that release.
 
 ## About this repository
 
