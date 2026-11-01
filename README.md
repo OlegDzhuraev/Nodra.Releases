@@ -1,3 +1,5 @@
+![GitHub last commit](https://img.shields.io/badge/version-0.5.0-blue)
+
 # Nodra
 
 **Procedural 3D modeling with a visual node editor.**
